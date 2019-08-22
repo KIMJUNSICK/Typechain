@@ -1,14 +1,15 @@
-interface Human {
-  name: string;
-  age: number;
-  gender: string;
+class Human {
+  public name: string;
+  private age: number;
+  public gender: string;
+  constructor(name: string, age: number, gender?: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
 }
 
-const person = {
-  name: "junsik",
-  age: 25,
-  gender: "male"
-};
+const junsik = new Human("junsik", 25);
 
 export {};
 
@@ -18,4 +19,4 @@ const sayHello = (person: Human): string => {
   }!`;
 };
 
-console.log(sayHello(person));
+console.log(sayHello(junsik));
