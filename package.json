@@ -5,5 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/KIMJUNSICK/Typechain.git",
   "author": "Kim Jun Sik <jinaganda5@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "prestart": "tsc",
+    "start": "node index.js"
+  },
+  "dependencies": {}
 }
