@@ -8,7 +8,7 @@ class Block {
   public timestamp: number;
 
   static calculateBlockHash = (
-    index: string,
+    index: number,
     previousHash: string,
     data: string,
     timestamp: number
@@ -39,5 +39,29 @@ const getBlockchain = (): Block[] => blockchain;
 const getLatestBlock = (): Block => blockchain[blockchain.length - 1];
 
 const getNewTimeStamp = (): number => Math.round(new Date().getTime() / 1000);
+
+const createNewBlock = (data: string): Block => {
+  const previousBlock: Block = getLatestBlock();
+  const newIndex: number = previousBlock.index + 1;
+  const newTimeStamp: number = getNewTimeStamp();
+  const newHash: string = Block.calculateBlockHash(
+    newIndex,
+    previousBlock.hash,
+    data,
+    newTimeStamp
+  );
+
+  const newBlock = new Block(
+    newIndex,
+    newHash,
+    previousBlock.hash,
+    data,
+    newTimeStamp
+  );
+  return newBlock;
+};
+
+console.log(createNewBlock("junsik"));
+console.log(createNewBlock("jeongmin"));
 
 export {};
