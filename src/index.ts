@@ -98,4 +98,10 @@ const addBlock = (candidateBlock: Block): void => {
   }
 };
 
+createNewBlock("junsik2");
+createNewBlock("junsik3");
+createNewBlock("junsik4");
+
+console.log(blockchain);
+
 export {};
